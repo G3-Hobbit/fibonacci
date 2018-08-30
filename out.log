@@ -1,0 +1,861 @@
+Statistical profiling result from isolate-0x2fbfe20-v8.log, (1126 ticks, 1 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+      5    0.4%          /lib/x86_64-linux-gnu/libc-2.27.so
+      1    0.1%          /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      1    0.1%    0.1%  LazyCompile: ~writeOrBuffer _stream_writable.js:360:23
+      1    0.1%    0.1%  LazyCompile: ~popAsyncIds internal/async_hooks.js:402:21
+      1    0.1%    0.1%  LazyCompile: ~emitAfterScript internal/async_hooks.js:354:25
+      1    0.1%    0.1%  LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      1    0.1%    0.1%  LazyCompile: ~E internal/errors.js:190:11
+      1    0.1%    0.1%  Builtin: StoreIC
+      1    0.1%    0.1%  Builtin: LoadIC_Noninlined
+      1    0.1%    0.1%  Builtin: KeyedLoadIC_Megamorphic
+      1    0.1%    0.1%  Builtin: FastNewClosure
+
+ [C++]:
+   ticks  total  nonlib   name
+    473   42.0%   42.2%  __write
+    245   21.8%   21.9%  __lll_lock_wait
+    219   19.4%   19.6%  node::contextify::ContextifyScript::New(v8::FunctionCallbackInfo<v8::Value> const&)
+     24    2.1%    2.1%  __mprotect
+     14    1.2%    1.3%  __lll_unlock_wake
+     11    1.0%    1.0%  node::GetBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.4%    0.4%  node::fs::LStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.4%    0.4%  _dl_addr
+      3    0.3%    0.3%  v8::internal::interpreter::BytecodeArrayWriter::EmitBytecode(v8::internal::interpreter::BytecodeNode const*)
+      3    0.3%    0.3%  v8::internal::Factory::NewFixedArrayWithFiller(v8::internal::Heap::RootListIndex, int, v8::internal::Object*, v8::internal::PretenureFlag)
+      3    0.3%    0.3%  _IO_fwrite
+      2    0.2%    0.2%  void v8::internal::CopyWords<v8::internal::Object*>(v8::internal::Object**, v8::internal::Object* const*, unsigned long)
+      2    0.2%    0.2%  void node::StreamBase::JSMethod<node::LibuvStreamWrap, &(int node::StreamBase::WriteString<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&))>(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.2%    0.2%  v8::internal::interpreter::BytecodeRegisterOptimizer::RegisterListFreeEvent(v8::internal::interpreter::RegisterList)
+      2    0.2%    0.2%  v8::internal::TransitionsAccessor::Insert(v8::internal::Handle<v8::internal::Name>, v8::internal::Handle<v8::internal::Map>, v8::internal::SimpleTransitionFlag)
+      2    0.2%    0.2%  v8::internal::StubFrame::GetCallerStackPointer() const
+      2    0.2%    0.2%  v8::internal::Scavenger::ScavengeObject(v8::internal::HeapObjectReference**, v8::internal::HeapObject*) [clone .constprop.284]
+      2    0.2%    0.2%  v8::internal::ParserBase<v8::internal::Parser>::ParseMemberExpressionContinuation(v8::internal::Expression*, bool*, bool*)
+      2    0.2%    0.2%  v8::internal::ParserBase<v8::internal::Parser>::ParseBinaryExpression(int, bool, bool*)
+      2    0.2%    0.2%  v8::internal::ParserBase<v8::internal::Parser>::ParseAssignmentExpression(bool, bool*)
+      2    0.2%    0.2%  v8::internal::Heap::AllocateRaw(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment)
+      2    0.2%    0.2%  v8::internal::Deserializer<v8::internal::DefaultDeserializerAllocator>::ReadData(v8::internal::MaybeObject**, v8::internal::MaybeObject**, int, unsigned long)
+      2    0.2%    0.2%  node::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.2%    0.2%  __libc_free
+      1    0.1%    0.1%  void v8::internal::Scanner::Advance<false, true>()
+      1    0.1%    0.1%  v8::internal::interpreter::ConstantArrayBuilder::ToFixedArray(v8::internal::Isolate*)
+      1    0.1%    0.1%  v8::internal::interpreter::ConstantArrayBuilder::Insert(v8::internal::AstRawString const*)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeRegisterOptimizer::PrepareOutputRegister(v8::internal::interpreter::Register)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeLabels::New()
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeGenerator::VisitNoStackOverflowCheck(v8::internal::AstNode*)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeGenerator::VisitForAccumulatorValue(v8::internal::Expression*)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeGenerator::FinalizeBytecode(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Script>)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeArrayWriter::WriteJump(v8::internal::interpreter::BytecodeNode*, v8::internal::interpreter::BytecodeLabel*)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeArrayBuilder::LoadNamedProperty(v8::internal::interpreter::Register, v8::internal::AstRawString const*, int)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeArrayBuilder::LoadAccumulatorWithRegister(v8::internal::interpreter::Register)
+      1    0.1%    0.1%  v8::internal::interpreter::BytecodeArrayBuilder::BinaryOperationSmiLiteral(v8::internal::Token::Value, v8::internal::Smi*, int)
+      1    0.1%    0.1%  v8::internal::compiler::LiveRangeBuilder::ProcessInstructions(v8::internal::compiler::InstructionBlock const*, v8::internal::BitVector*)
+      1    0.1%    0.1%  v8::internal::compiler::LiveRange::DetachAt(v8::internal::compiler::LifetimePosition, v8::internal::compiler::LiveRange*, v8::internal::Zone*, v8::internal::compiler::LiveRange::HintConnectionOption)
+      1    0.1%    0.1%  v8::internal::ZoneList<int>::Add(int const&, v8::internal::Zone*)
+      1    0.1%    0.1%  v8::internal::VariableProxy::BindTo(v8::internal::Variable*)
+      1    0.1%    0.1%  v8::internal::VariableMap::Declare(v8::internal::Zone*, v8::internal::Scope*, v8::internal::AstRawString const*, v8::internal::VariableMode, v8::internal::VariableKind, v8::internal::InitializationFlag, v8::internal::MaybeAssignedFlag, bool*)
+      1    0.1%    0.1%  v8::internal::TurboAssembler::StubPrologue(v8::internal::StackFrame::Type)
+      1    0.1%    0.1%  v8::internal::String::CalculateLineEnds(v8::internal::Handle<v8::internal::String>, bool)
+      1    0.1%    0.1%  v8::internal::StoreBuffer::MoveEntriesToRememberedSet(int)
+      1    0.1%    0.1%  v8::internal::StackFrameIterator::StackFrameIterator(v8::internal::Isolate*)
+      1    0.1%    0.1%  v8::internal::SourcePositionTableBuilder::SourcePositionTableBuilder(v8::internal::SourcePositionTableBuilder::RecordingMode)
+      1    0.1%    0.1%  v8::internal::SerializerDeserializer::Iterate(v8::internal::Isolate*, v8::internal::RootVisitor*)
+      1    0.1%    0.1%  v8::internal::Segment::ZapContents()
+      1    0.1%    0.1%  v8::internal::Scope::LookupRecursive(v8::internal::ParseInfo*, v8::internal::VariableProxy*, v8::internal::Scope*)
+      1    0.1%    0.1%  v8::internal::Scavenger::IterateAndScavengePromotedObject(v8::internal::HeapObject*, int)
+      1    0.1%    0.1%  v8::internal::Scanner::PeekAhead()
+      1    0.1%    0.1%  v8::internal::ParserBase<v8::internal::Parser>::ParseStatementListItem(bool*)
+      1    0.1%    0.1%  v8::internal::ParserBase<v8::internal::Parser>::ParsePostfixExpression(bool*)
+      1    0.1%    0.1%  v8::internal::ParserBase<v8::internal::Parser>::ParseExpressionCoverGrammar(bool, bool*)
+      1    0.1%    0.1%  v8::internal::ParserBase<v8::internal::Parser>::ArrowFormalParametersUnexpectedToken()
+      1    0.1%    0.1%  v8::internal::Parser::ParseFunctionLiteral(v8::internal::AstRawString const*, v8::internal::Scanner::Location, v8::internal::FunctionNameValidity, v8::internal::FunctionKind, int, v8::internal::FunctionLiteral::FunctionType, v8::internal::LanguageMode, v8::internal::ZoneList<v8::internal::AstRawString const*>*, bool*)
+      1    0.1%    0.1%  v8::internal::Object::GetProperty(v8::internal::LookupIterator*)
+      1    0.1%    0.1%  v8::internal::MemoryAllocator::MemoryAllocator(v8::internal::Isolate*)
+      1    0.1%    0.1%  v8::internal::MaybeHandle<v8::internal::JSObject> v8::internal::(anonymous namespace)::CreateLiteral<v8::internal::(anonymous namespace)::ObjectBoilerplate>(v8::internal::Isolate*, v8::internal::Handle<v8::internal::FeedbackVector>, int, v8::internal::Handle<v8::internal::HeapObject>, int)
+      1    0.1%    0.1%  v8::internal::Map::UpdateFieldType(int, v8::internal::Handle<v8::internal::Name>, v8::internal::PropertyConstness, v8::internal::Representation, v8::internal::Handle<v8::internal::Object>)
+      1    0.1%    0.1%  v8::internal::Logger::CodeCreateEvent(v8::internal::CodeEventListener::LogEventsAndTags, v8::internal::AbstractCode*, v8::internal::SharedFunctionInfo*, v8::internal::Name*)
+      1    0.1%    0.1%  v8::internal::Logger::CodeCreateEvent(v8::internal::CodeEventListener::LogEventsAndTags, v8::internal::AbstractCode*, char const*)
+      1    0.1%    0.1%  v8::internal::Log::MessageBuilder::AppendStringPart(v8::internal::String*, int)
+      1    0.1%    0.1%  v8::internal::Isolate::FireCallCompletedCallback()
+      1    0.1%    0.1%  v8::internal::IC::UpdateState(v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>)
+      1    0.1%    0.1%  v8::internal::IC::IC(v8::internal::Isolate*, v8::internal::Handle<v8::internal::FeedbackVector>, v8::internal::FeedbackSlot)
+      1    0.1%    0.1%  v8::internal::Heap::RecordWrite(v8::internal::Object*, v8::internal::Object**, v8::internal::Object*)
+      1    0.1%    0.1%  v8::internal::GCTracer::Start(v8::internal::GarbageCollector, v8::internal::GarbageCollectionReason, char const*)
+      1    0.1%    0.1%  v8::internal::FixedArray::set(int, v8::internal::Object*)
+      1    0.1%    0.1%  v8::internal::Factory::TryNewCode(v8::internal::CodeDesc const&, v8::internal::Code::Kind, v8::internal::Handle<v8::internal::Object>, int, v8::internal::MaybeHandle<v8::internal::ByteArray>, v8::internal::MaybeHandle<v8::internal::DeoptimizationData>, v8::internal::Movability, unsigned int, bool, int, int, int)
+      1    0.1%    0.1%  v8::internal::Factory::ObjectLiteralMapFromCache(v8::internal::Handle<v8::internal::Context>, int)
+      1    0.1%    0.1%  v8::internal::Factory::NewMap(v8::internal::InstanceType, int, v8::internal::ElementsKind, int)
+      1    0.1%    0.1%  v8::internal::Factory::NewBytecodeArray(int, unsigned char const*, int, int, v8::internal::Handle<v8::internal::FixedArray>)
+      1    0.1%    0.1%  v8::internal::Factory::NewByteArray(int, v8::internal::PretenureFlag)
+      1    0.1%    0.1%  v8::internal::Factory::InitializeMap(v8::internal::Map*, v8::internal::InstanceType, int, v8::internal::ElementsKind, int)
+      1    0.1%    0.1%  v8::internal::Factory::AllocateRawWithImmortalMap(int, v8::internal::PretenureFlag, v8::internal::Map*, v8::internal::AllocationAlignment) [clone .constprop.141]
+      1    0.1%    0.1%  v8::internal::Expression::IsPropertyName() const
+      1    0.1%    0.1%  v8::internal::Deserializer<v8::internal::DefaultDeserializerAllocator>::ReadObject(int, v8::internal::MaybeObject**, v8::internal::HeapObjectReferenceType)
+      1    0.1%    0.1%  v8::internal::DescriptorArray::GeneralizeAllFields()
+      1    0.1%    0.1%  v8::internal::DescriptorArray::CopyFrom(int, v8::internal::DescriptorArray*)
+      1    0.1%    0.1%  v8::internal::Descriptor::DataConstant(v8::internal::Handle<v8::internal::Name>, int, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyAttributes)
+      1    0.1%    0.1%  v8::internal::DeclarationScope::DeclareDefaultFunctionVariables(v8::internal::AstValueFactory*)
+      1    0.1%    0.1%  v8::internal::DeclarationScope::AttachOuterScopeInfo(v8::internal::ParseInfo*, v8::internal::Isolate*)
+      1    0.1%    0.1%  v8::internal::CodeStubAssembler::SmiUntag(v8::internal::compiler::SloppyTNode<v8::internal::Smi>)
+      1    0.1%    0.1%  v8::internal::AstValueFactory::GetString(unsigned int, bool, v8::internal::Vector<unsigned char const>)
+      1    0.1%    0.1%  v8::internal::(anonymous namespace)::InvalidateOnePrototypeValidityCellInternal(v8::internal::Map*)
+      1    0.1%    0.1%  v8::internal::(anonymous namespace)::InitializeIntrinsicFunctionNames()
+      1    0.1%    0.1%  v8::internal::(anonymous namespace)::AppendCodeCreateHeader(v8::internal::Log::MessageBuilder&, v8::internal::CodeEventListener::LogEventsAndTags, v8::internal::AbstractCode*, v8::base::ElapsedTimer*)
+      1    0.1%    0.1%  v8::base::CallOnceImpl(long*, std::function<void ()>)
+      1    0.1%    0.1%  u_isupper_62
+      1    0.1%    0.1%  std::ostream::sentry::sentry(std::ostream&)
+      1    0.1%    0.1%  std::ostream::flush()
+      1    0.1%    0.1%  std::_Hashtable<v8::internal::AllocationSite*, std::pair<v8::internal::AllocationSite* const, unsigned long>, std::allocator<std::pair<v8::internal::AllocationSite* const, unsigned long> >, std::__detail::_Select1st, std::equal_to<v8::internal::AllocationSite*>, std::hash<v8::internal::AllocationSite*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, false, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<std::pair<v8::internal::AllocationSite* const, unsigned long>, false>*)
+      1    0.1%    0.1%  node::i18n::(anonymous namespace)::GetVersion(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  node::fs::Read(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  node::fs::Open(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  node::fs::InternalModuleStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  node::TTYWrap::GetWindowSize(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  node::EnvGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+      1    0.1%    0.1%  fmod
+      1    0.1%    0.1%  do_futex_wait.constprop.1
+      1    0.1%    0.1%  __pthread_cond_wait
+      1    0.1%    0.1%  __madvise
+      1    0.1%    0.1%  __libc_malloc
+      1    0.1%    0.1%  _IO_fflush
+
+ [Summary]:
+   ticks  total  nonlib   name
+      9    0.8%    0.8%  JavaScript
+   1110   98.6%   99.1%  C++
+     13    1.2%    1.2%  GC
+      6    0.5%          Shared libraries
+      1    0.1%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    243   32.6%   21.6%  v8::internal::Builtin_HandleApiCall(int, v8::internal::Object**, v8::internal::Isolate*)
+    235   31.5%   20.9%  v8::internal::Runtime_CompileLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+    180   24.1%   16.0%  v8::internal::Runtime_InterpreterDeserializeLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+     33    4.4%    2.9%  v8::internal::Runtime_DeserializeLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+     17    2.3%    1.5%  v8::internal::Runtime_NewObject(int, v8::internal::Object**, v8::internal::Isolate*)
+     13    1.7%    1.2%  v8::internal::Runtime_KeyedStoreIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      6    0.8%    0.5%  v8::internal::Runtime_CreateObjectLiteral(int, v8::internal::Object**, v8::internal::Isolate*)
+      4    0.5%    0.4%  v8::internal::Runtime_StoreIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      3    0.4%    0.3%  v8::internal::Runtime_LoadIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.3%    0.2%  v8::internal::Runtime_RegExpExec(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.3%    0.2%  v8::internal::Runtime_LoadGlobalIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.3%    0.2%  v8::internal::Runtime_KeyedLoadIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.3%    0.2%  v8::internal::Runtime_DefineClass(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.1%    0.1%  v8::internal::Runtime_SetProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.1%    0.1%  v8::internal::Runtime_LoadPropertyWithInterceptor(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.1%    0.1%  v8::internal::Builtin_NumberPrototypeToString(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.1%    0.1%  v8::internal::Builtin_JsonParse(int, v8::internal::Object**, v8::internal::Isolate*)
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    473   42.0%  __write
+    108   22.8%    v8::internal::Runtime_InterpreterDeserializeLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+     15   13.9%      Script: ~<anonymous> buffer.js:1:11
+     15  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+     15  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+     15  100.0%            Script: ~<anonymous> util.js:1:11
+     11   10.2%      Script: ~bootstrapInternalLoaders internal/bootstrap/loaders.js:42:35
+      9    8.3%      Script: ~<anonymous> internal/url.js:1:11
+      9  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      9  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      9  100.0%            Script: ~<anonymous> internal/fs/streams.js:1:11
+      9    8.3%      Script: ~<anonymous> :5:10
+      9  100.0%        Script: ~<anonymous> :1:1
+      8    7.4%      LazyCompile: ~binding internal/bootstrap/loaders.js:77:39
+      8  100.0%        Script: ~bootstrapInternalLoaders internal/bootstrap/loaders.js:42:35
+      6    5.6%      Script: ~<anonymous> internal/errors.js:1:11
+      6  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      6  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      6  100.0%            Script: ~<anonymous> internal/async_hooks.js:1:11
+      5    4.6%      LazyCompile: ~QuickSort native array.js:530:19
+      5  100.0%        LazyCompile: ~InnerArraySort native array.js:486:24
+      5  100.0%          LazyCompile: ~sort native array.js:610:46
+      5  100.0%            Script: ~<anonymous> internal/modules/cjs/helpers.js:1:11
+      5    4.6%      LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      5  100.0%        LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      5  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      5  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      4    3.7%      Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      4    3.7%      LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      4  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      4  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      3    2.8%      Script: ~<anonymous> internal/encoding.js:1:11
+      3  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      3  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      3  100.0%            Script: ~<anonymous> util.js:1:11
+      3    2.8%      LazyCompile: ~setupProcessICUVersions internal/bootstrap/node.js:510:35
+      3  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      3  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      3    2.8%      LazyCompile: ~E internal/errors.js:190:11
+      3  100.0%        Script: ~<anonymous> internal/errors.js:1:11
+      3  100.0%          LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      3  100.0%            LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2    1.9%      Script: ~<anonymous> internal/util.js:1:11
+      2  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      2  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2  100.0%            Script: ~<anonymous> internal/encoding.js:1:11
+      2    1.9%      Script: ~<anonymous> _stream_readable.js:1:11
+      2  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      2  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2  100.0%            Script: ~<anonymous> stream.js:1:11
+      2    1.9%      LazyCompile: ~isSignal internal/process/main_thread_only.js:73:20
+      2  100.0%        LazyCompile: ~<anonymous> internal/process/main_thread_only.js:78:37
+      2  100.0%          LazyCompile: ~emit events.js:140:44
+      2  100.0%            LazyCompile: ~_addListener events.js:193:22
+     85   18.0%    v8::internal::Runtime_CompileLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+     14   16.5%      LazyCompile: ~startup internal/bootstrap/node.js:30:19
+     14  100.0%        Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      4    4.7%      LazyCompile: ~_tickCallback internal/process/next_tick.js:41:25
+      4  100.0%        LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      4  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      4  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      3    3.5%      LazyCompile: ~write console.js:143:15
+      3  100.0%        LazyCompile: ~log console.js:196:37
+      3  100.0%          node::inspector::(anonymous namespace)::InspectorConsoleCall(v8::FunctionCallbackInfo<v8::Value> const&)
+      3  100.0%            Script: ~<anonymous> /home/vagrant/workspace/nyobi/fibonacci/app.js:1:11
+      3    3.5%      LazyCompile: ~afterWrite _stream_writable.js:476:20
+      3  100.0%        LazyCompile: ~_tickCallback internal/process/next_tick.js:41:25
+      3  100.0%          LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      3  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      2    2.4%      LazyCompile: ~realpathSync fs.js:1340:22
+      2  100.0%        LazyCompile: ~toRealPath internal/modules/cjs/loader.js:201:20
+      2  100.0%          LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:220:28
+      2  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:547:35
+      2    2.4%      LazyCompile: ~readFileSync fs.js:336:22
+      2  100.0%        LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      2  100.0%          LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      2  100.0%            LazyCompile: ~tryModuleLoad internal/modules/cjs/loader.js:535:23
+      2    2.4%      LazyCompile: ~onwrite _stream_writable.js:445:17
+      2  100.0%        LazyCompile: ~afterWriteDispatched internal/stream_base_commons.js:73:30
+      2  100.0%          LazyCompile: ~writeGeneric internal/stream_base_commons.js:67:22
+      2  100.0%            LazyCompile: ~Socket._writeGeneric net.js:735:42
+      2    2.4%      LazyCompile: ~nextTick internal/process/next_tick.js:96:20
+      2  100.0%        LazyCompile: ~onwrite _stream_writable.js:445:17
+      2  100.0%          LazyCompile: ~afterWriteDispatched internal/stream_base_commons.js:73:30
+      2  100.0%            LazyCompile: ~writeGeneric internal/stream_base_commons.js:67:22
+      2    2.4%      LazyCompile: ~Socket._writeGeneric net.js:735:42
+      2  100.0%        LazyCompile: ~Socket._write net.js:772:35
+      2  100.0%          LazyCompile: ~doWrite _stream_writable.js:400:17
+      2  100.0%            LazyCompile: ~writeOrBuffer _stream_writable.js:360:23
+      2    2.4%      LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      2  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.2%      Script: ~bootstrapInternalLoaders internal/bootstrap/loaders.js:42:35
+      1    1.2%      Script: ~<anonymous> util.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            LazyCompile: ~setupGlobalVariables internal/bootstrap/node.js:323:32
+      1    1.2%      Script: ~<anonymous> net.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> tty.js:1:11
+      1    1.2%      Script: ~<anonymous> internal/url.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> internal/fs/streams.js:1:11
+      1    1.2%      Script: ~<anonymous> internal/streams/legacy.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> stream.js:1:11
+      1    1.2%      Script: ~<anonymous> internal/errors.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> internal/async_hooks.js:1:11
+      1    1.2%      Script: ~<anonymous> internal/encoding.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> util.js:1:11
+      1    1.2%      Script: ~<anonymous> internal/async_hooks.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            LazyCompile: ~setupProcessFatal internal/bootstrap/node.js:455:29
+      1    1.2%      Script: ~<anonymous> buffer.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> util.js:1:11
+      1    1.2%      LazyCompile: ~writeOrBuffer _stream_writable.js:360:23
+      1  100.0%        LazyCompile: ~Writable.write _stream_writable.js:268:36
+      1  100.0%          LazyCompile: ~write console.js:143:15
+      1  100.0%            LazyCompile: ~log console.js:196:37
+      1    1.2%      LazyCompile: ~tryReadSync fs.js:324:21
+      1  100.0%        LazyCompile: ~readFileSync fs.js:336:22
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      1    1.2%      LazyCompile: ~toString buffer.js:644:46
+      1  100.0%        LazyCompile: ~readFileSync fs.js:336:22
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      1    1.2%      LazyCompile: ~stat internal/modules/cjs/loader.js:83:14
+      1  100.0%        LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:220:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:547:35
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      1    1.2%      LazyCompile: ~sort native array.js:610:46
+      1  100.0%        Script: ~<anonymous> internal/modules/cjs/helpers.js:1:11
+      1  100.0%          LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%            LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1    1.2%      LazyCompile: ~setupSignalHandlers internal/process/main_thread_only.js:68:29
+      1  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.2%      LazyCompile: ~setupProcessMethods internal/process/main_thread_only.js:23:29
+      1  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.2%      LazyCompile: ~setupInspector internal/bootstrap/node.js:419:26
+      1  100.0%        LazyCompile: ~setupGlobalConsole internal/bootstrap/node.js:382:30
+      1  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.2%      LazyCompile: ~setupGlobalVariables internal/bootstrap/node.js:323:32
+      1  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.2%      LazyCompile: ~setupGlobalConsole internal/bootstrap/node.js:382:30
+      1  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.2%      LazyCompile: ~runInThisContext vm.js:293:26
+      1  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:650:37
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      1    1.2%      LazyCompile: ~push internal/fixed_queue.js:95:7
+      1  100.0%        LazyCompile: ~nextTick internal/process/next_tick.js:96:20
+      1  100.0%          LazyCompile: ~onwrite _stream_writable.js:445:17
+      1  100.0%            LazyCompile: ~afterWriteDispatched internal/stream_base_commons.js:73:30
+      1    1.2%      LazyCompile: ~openSync fs.js:424:18
+      1  100.0%        LazyCompile: ~readFileSync fs.js:336:22
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      1    1.2%      LazyCompile: ~ok assert.js:343:12
+      1  100.0%        LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      1  100.0%          LazyCompile: ~tryModuleLoad internal/modules/cjs/loader.js:535:23
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      1    1.2%      LazyCompile: ~normalizeString path.js:57:25
+      1  100.0%        LazyCompile: ~resolve path.js:1075:28
+      1  100.0%          LazyCompile: ~Module._initPaths internal/modules/cjs/loader.js:748:29
+      1  100.0%            Script: ~<anonymous> internal/modules/cjs/loader.js:1:11
+      1    1.2%      LazyCompile: ~isEncoding buffer.js:450:40
+      1  100.0%        LazyCompile: ~assertEncoding internal/fs/utils.js:39:24
+      1  100.0%          LazyCompile: ~getOptions internal/fs/utils.js:52:20
+      1  100.0%            LazyCompile: ~readFileSync fs.js:336:22
+      1    1.2%      LazyCompile: ~initSocketHandle net.js:204:26
+      1  100.0%        LazyCompile: ~Socket net.js:221:16
+      1  100.0%          LazyCompile: ~WriteStream tty.js:70:21
+      1  100.0%            LazyCompile: ~createWritableStdioStream internal/process/stdio.js:164:35
+      1    1.2%      LazyCompile: ~getOptions internal/fs/utils.js:52:20
+      1  100.0%        LazyCompile: ~realpathSync fs.js:1340:22
+      1  100.0%          LazyCompile: ~toRealPath internal/modules/cjs/loader.js:201:20
+      1  100.0%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:220:28
+      1    1.2%      LazyCompile: ~formatNumber util.js:749:22
+      1  100.0%        LazyCompile: ~formatPrimitive util.js:756:25
+      1  100.0%          LazyCompile: ~formatValue util.js:424:21
+      1  100.0%            LazyCompile: ~inspect util.js:295:17
+      1    1.2%      LazyCompile: ~emitBeforeScript internal/async_hooks.js:340:26
+      1  100.0%        LazyCompile: ~_tickCallback internal/process/next_tick.js:41:25
+      1  100.0%          LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      1  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1    1.2%      LazyCompile: ~emitAfterScript internal/async_hooks.js:354:25
+      1  100.0%        LazyCompile: ~_tickCallback internal/process/next_tick.js:41:25
+      1  100.0%          LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      1  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1    1.2%      LazyCompile: ~emit events.js:140:44
+      1  100.0%        LazyCompile: ~_addListener events.js:193:22
+      1  100.0%          LazyCompile: ~addListener events.js:258:58
+      1  100.0%            LazyCompile: ~setupSignalHandlers internal/process/main_thread_only.js:68:29
+      1    1.2%      LazyCompile: ~createScript vm.js:244:22
+      1  100.0%        LazyCompile: ~runInThisContext vm.js:293:26
+      1  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:650:37
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      1    1.2%      LazyCompile: ~createPool buffer.js:125:20
+      1  100.0%        Script: ~<anonymous> buffer.js:1:11
+      1  100.0%          LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%            LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1    1.2%      LazyCompile: ~afterWriteDispatched internal/stream_base_commons.js:73:30
+      1  100.0%        LazyCompile: ~writeGeneric internal/stream_base_commons.js:67:22
+      1  100.0%          LazyCompile: ~Socket._writeGeneric net.js:735:42
+      1  100.0%            LazyCompile: ~Socket._write net.js:772:35
+      1    1.2%      LazyCompile: ~addListener events.js:258:58
+      1  100.0%        LazyCompile: ~setupSignalHandlers internal/process/main_thread_only.js:68:29
+      1  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.2%      LazyCompile: ~Writable.write _stream_writable.js:268:36
+      1  100.0%        LazyCompile: ~write console.js:143:15
+      1  100.0%          LazyCompile: ~log console.js:196:37
+      1  100.0%            node::inspector::(anonymous namespace)::InspectorConsoleCall(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    1.2%      LazyCompile: ~Socket net.js:221:16
+      1  100.0%        LazyCompile: ~WriteStream tty.js:70:21
+      1  100.0%          LazyCompile: ~createWritableStdioStream internal/process/stdio.js:164:35
+      1  100.0%            LazyCompile: ~getStdout internal/process/stdio.js:18:21
+      1    1.2%      LazyCompile: ~Readable.removeListener _stream_readable.js:827:45
+      1  100.0%        LazyCompile: ~write console.js:143:15
+      1  100.0%          LazyCompile: ~log console.js:196:37
+      1  100.0%            node::inspector::(anonymous namespace)::InspectorConsoleCall(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    1.2%      LazyCompile: ~NativeModule.nonInternalExists internal/bootstrap/loaders.js:204:46
+      1  100.0%        Builtin: ArrayFilter
+      1  100.0%          Script: ~<anonymous> internal/modules/cjs/loader.js:1:11
+      1  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1    1.2%      LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      1  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.2%      LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      1  100.0%        LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      1  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.2%      LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:220:28
+      1  100.0%        LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:547:35
+      1  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      1  100.0%            LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      1    1.2%      LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      1  100.0%        LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      1  100.0%          LazyCompile: ~tryModuleLoad internal/modules/cjs/loader.js:535:23
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      1    1.2%      LazyCompile: ~E internal/errors.js:190:11
+      1  100.0%        Script: ~<anonymous> internal/errors.js:1:11
+      1  100.0%          LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%            LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1    1.2%      LazyCompile: ~Duplex _stream_duplex.js:47:16
+      1  100.0%        LazyCompile: ~Socket net.js:221:16
+      1  100.0%          LazyCompile: ~WriteStream tty.js:70:21
+      1  100.0%            LazyCompile: ~createWritableStdioStream internal/process/stdio.js:164:35
+      1    1.2%      LazyCompile: ~<anonymous> console.js:126:10
+      1  100.0%        LazyCompile: ~afterWrite _stream_writable.js:476:20
+      1  100.0%          LazyCompile: ~_tickCallback internal/process/next_tick.js:41:25
+      1  100.0%            LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      1    1.2%      LazyCompile: ~$getMaxListeners events.js:89:26
+      1  100.0%        LazyCompile: ~_addListener events.js:193:22
+      1  100.0%          LazyCompile: ~addListener events.js:258:58
+      1  100.0%            LazyCompile: ~getStderr internal/process/stdio.js:33:21
+      1    1.2%      Builtin: CEntry_Return1_DontSaveFPRegs_ArgvOnStack_BuiltinExit
+      1  100.0%        LazyCompile: ~setupConfig internal/process/per_thread.js:146:21
+      1  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.2%      Builtin: ArrayForEach
+      1  100.0%        LazyCompile: ~E internal/errors.js:190:11
+      1  100.0%          Script: ~<anonymous> internal/errors.js:1:11
+      1  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+     26    5.5%    v8::internal::Runtime_DeserializeLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+      4   15.4%      Script: ~<anonymous> buffer.js:1:11
+      4  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      4  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      4  100.0%            Script: ~<anonymous> util.js:1:11
+      2    7.7%      Script: ~<anonymous> util.js:1:11
+      2  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      2  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2  100.0%            LazyCompile: ~setupGlobalVariables internal/bootstrap/node.js:323:32
+      2    7.7%      Script: ~<anonymous> stream.js:1:11
+      2  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      2  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2  100.0%            Script: ~<anonymous> internal/fs/streams.js:1:11
+      2    7.7%      Script: ~<anonymous> internal/errors.js:1:11
+      2  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      2  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2  100.0%            Script: ~<anonymous> internal/async_hooks.js:1:11
+      2    7.7%      LazyCompile: ~binding internal/bootstrap/loaders.js:77:39
+      2  100.0%        Script: ~bootstrapInternalLoaders internal/bootstrap/loaders.js:42:35
+      1    3.8%      Script: ~bootstrapInternalLoaders internal/bootstrap/loaders.js:42:35
+      1    3.8%      Script: ~<anonymous> internal/util/types.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> internal/encoding.js:1:11
+      1    3.8%      Script: ~<anonymous> internal/util.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> internal/encoding.js:1:11
+      1    3.8%      Script: ~<anonymous> internal/url.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> internal/fs/streams.js:1:11
+      1    3.8%      Script: ~<anonymous> internal/process/promises.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            LazyCompile: ~setupNextTick internal/process/next_tick.js:5:23
+      1    3.8%      Script: ~<anonymous> console.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            LazyCompile: ~setupGlobalConsole internal/bootstrap/node.js:382:30
+      1    3.8%      Script: ~<anonymous> _stream_duplex.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> stream.js:1:11
+      1    3.8%      LazyCompile: ~setupProcessICUVersions internal/bootstrap/node.js:510:35
+      1  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    3.8%      LazyCompile: ~resolve path.js:1075:28
+      1  100.0%        LazyCompile: ~Module._initPaths internal/modules/cjs/loader.js:748:29
+      1  100.0%          Script: ~<anonymous> internal/modules/cjs/loader.js:1:11
+      1  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1    3.8%      LazyCompile: ~getColorDepth internal/tty.js:70:23
+      1  100.0%        LazyCompile: ~Console.(anonymous function) console.js:175:49
+      1  100.0%          LazyCompile: ~Console.(anonymous function) console.js:186:47
+      1  100.0%            LazyCompile: ~log console.js:196:37
+      1    3.8%      LazyCompile: ~formatNumber util.js:749:22
+      1  100.0%        LazyCompile: ~formatPrimitive util.js:756:25
+      1  100.0%          LazyCompile: ~formatValue util.js:424:21
+      1  100.0%            LazyCompile: ~inspect util.js:295:17
+      1    3.8%      LazyCompile: ~fib /home/vagrant/workspace/nyobi/fibonacci/app.js:6:13
+      1  100.0%        Script: ~<anonymous> /home/vagrant/workspace/nyobi/fibonacci/app.js:1:11
+      1  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:650:37
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      1    3.8%      LazyCompile: ~NativeModule.exists internal/bootstrap/loaders.js:186:33
+      1  100.0%        LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    3.8%      LazyCompile: ~E internal/errors.js:190:11
+      1  100.0%        Script: ~<anonymous> internal/errors.js:1:11
+      1  100.0%          LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%            LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+
+    245   21.8%  __lll_lock_wait
+     99   40.4%    v8::internal::Runtime_CompileLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+     14   14.1%      LazyCompile: ~startup internal/bootstrap/node.js:30:19
+     14  100.0%        Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      9    9.1%      LazyCompile: ~realpathSync fs.js:1340:22
+      9  100.0%        LazyCompile: ~toRealPath internal/modules/cjs/loader.js:201:20
+      9  100.0%          LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:220:28
+      9  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:547:35
+      6    6.1%      LazyCompile: ~Console.(anonymous function) console.js:186:47
+      6  100.0%        LazyCompile: ~log console.js:196:37
+      6  100.0%          node::inspector::(anonymous namespace)::InspectorConsoleCall(v8::FunctionCallbackInfo<v8::Value> const&)
+      6  100.0%            Script: ~<anonymous> /home/vagrant/workspace/nyobi/fibonacci/app.js:1:11
+      5    5.1%      LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:547:35
+      5  100.0%        LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      5  100.0%          LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      5  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      4    4.0%      LazyCompile: ~setupStdio internal/process/main_thread_only.js:17:20
+      4  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      4  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      4    4.0%      LazyCompile: ~readSync fs.js:470:18
+      4  100.0%        LazyCompile: ~tryReadSync fs.js:324:21
+      4  100.0%          LazyCompile: ~readFileSync fs.js:336:22
+      4  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      4    4.0%      LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      4  100.0%        LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      4  100.0%          LazyCompile: ~tryModuleLoad internal/modules/cjs/loader.js:535:23
+      4  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      3    3.0%      Script: ~<anonymous> util.js:1:11
+      3  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      3  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      3  100.0%            LazyCompile: ~setupGlobalVariables internal/bootstrap/node.js:323:32
+      3    3.0%      Script: ~<anonymous> internal/modules/cjs/loader.js:1:11
+      3  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      3  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      3  100.0%            LazyCompile: ~setupGlobalConsole internal/bootstrap/node.js:382:30
+      3    3.0%      LazyCompile: ~resolve path.js:1075:28
+      3  100.0%        LazyCompile: ~Module._initPaths internal/modules/cjs/loader.js:748:29
+      3  100.0%          Script: ~<anonymous> internal/modules/cjs/loader.js:1:11
+      3  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      3    3.0%      LazyCompile: ~readFileSync fs.js:336:22
+      3  100.0%        LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      3  100.0%          LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      3  100.0%            LazyCompile: ~tryModuleLoad internal/modules/cjs/loader.js:535:23
+      3    3.0%      LazyCompile: ~inspect util.js:295:17
+      3  100.0%        LazyCompile: ~formatWithOptions util.js:177:27
+      3  100.0%          LazyCompile: ~Console.(anonymous function) console.js:186:47
+      3  100.0%            LazyCompile: ~log console.js:196:37
+      3    3.0%      LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      3  100.0%        LazyCompile: ~tryModuleLoad internal/modules/cjs/loader.js:535:23
+      3  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      3  100.0%            LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      3    3.0%      LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      3  100.0%        LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      3  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      3  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      3    3.0%      LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:220:28
+      3  100.0%        LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:547:35
+      3  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      3  100.0%            LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      2    2.0%      Script: ~<anonymous> console.js:1:11
+      2  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      2  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2  100.0%            LazyCompile: ~setupGlobalConsole internal/bootstrap/node.js:382:30
+      2    2.0%      LazyCompile: ~_addListener events.js:193:22
+      2  100.0%        LazyCompile: ~addListener events.js:258:58
+      1   50.0%          LazyCompile: ~setupSignalHandlers internal/process/main_thread_only.js:68:29
+      1  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1   50.0%          LazyCompile: ~getStderr internal/process/stdio.js:33:21
+      1  100.0%            Script: ~<anonymous> console.js:1:11
+      2    2.0%      LazyCompile: ~WriteStream tty.js:70:21
+      2  100.0%        LazyCompile: ~createWritableStdioStream internal/process/stdio.js:164:35
+      2  100.0%          LazyCompile: ~getStdout internal/process/stdio.js:18:21
+      2  100.0%            Script: ~<anonymous> console.js:1:11
+      2    2.0%      LazyCompile: ~Readable.removeListener _stream_readable.js:827:45
+      2  100.0%        LazyCompile: ~write console.js:143:15
+      2  100.0%          LazyCompile: ~log console.js:196:37
+      2  100.0%            node::inspector::(anonymous namespace)::InspectorConsoleCall(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    1.0%      Script: ~<anonymous> _stream_readable.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> stream.js:1:11
+      1    1.0%      LazyCompile: ~writeGeneric internal/stream_base_commons.js:67:22
+      1  100.0%        LazyCompile: ~Socket._writeGeneric net.js:735:42
+      1  100.0%          LazyCompile: ~Socket._write net.js:772:35
+      1  100.0%            LazyCompile: ~doWrite _stream_writable.js:400:17
+      1    1.0%      LazyCompile: ~write console.js:143:15
+      1  100.0%        LazyCompile: ~log console.js:196:37
+      1  100.0%          node::inspector::(anonymous namespace)::InspectorConsoleCall(v8::FunctionCallbackInfo<v8::Value> const&)
+      1  100.0%            Script: ~<anonymous> /home/vagrant/workspace/nyobi/fibonacci/app.js:1:11
+      1    1.0%      LazyCompile: ~tryReadSync fs.js:324:21
+      1  100.0%        LazyCompile: ~readFileSync fs.js:336:22
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      1    1.0%      LazyCompile: ~tryModuleLoad internal/modules/cjs/loader.js:535:23
+      1  100.0%        LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      1  100.0%          LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      1  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1    1.0%      LazyCompile: ~shift internal/fixed_queue.js:104:8
+      1  100.0%        LazyCompile: ~_tickCallback internal/process/next_tick.js:41:25
+      1  100.0%          LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      1  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1    1.0%      LazyCompile: ~setupGlobalConsole internal/bootstrap/node.js:382:30
+      1  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.0%      LazyCompile: ~runInThisContext vm.js:85:19
+      1  100.0%        LazyCompile: ~runInThisContext vm.js:293:26
+      1  100.0%          LazyCompile: ~Module._compile internal/modules/cjs/loader.js:650:37
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:698:37
+      1    1.0%      LazyCompile: ~ok assert.js:343:12
+      1  100.0%        LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      1  100.0%          LazyCompile: ~tryModuleLoad internal/modules/cjs/loader.js:535:23
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      1    1.0%      LazyCompile: ~nextTick internal/process/next_tick.js:96:20
+      1  100.0%        LazyCompile: ~onwrite _stream_writable.js:445:17
+      1  100.0%          LazyCompile: ~afterWriteDispatched internal/stream_base_commons.js:73:30
+      1  100.0%            LazyCompile: ~writeGeneric internal/stream_base_commons.js:67:22
+      1    1.0%      LazyCompile: ~formatValue util.js:424:21
+      1  100.0%        LazyCompile: ~inspect util.js:295:17
+      1  100.0%          LazyCompile: ~formatWithOptions util.js:177:27
+      1  100.0%            LazyCompile: ~Console.(anonymous function) console.js:186:47
+      1    1.0%      LazyCompile: ~addListener events.js:258:58
+      1  100.0%        LazyCompile: ~setupSignalHandlers internal/process/main_thread_only.js:68:29
+      1  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.0%      LazyCompile: ~_tickCallback internal/process/next_tick.js:41:25
+      1  100.0%        LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      1  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.0%      LazyCompile: ~Writable.write _stream_writable.js:268:36
+      1  100.0%        LazyCompile: ~write console.js:143:15
+      1  100.0%          LazyCompile: ~log console.js:196:37
+      1  100.0%            node::inspector::(anonymous namespace)::InspectorConsoleCall(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    1.0%      LazyCompile: ~Socket._write net.js:772:35
+      1  100.0%        LazyCompile: ~doWrite _stream_writable.js:400:17
+      1  100.0%          LazyCompile: ~writeOrBuffer _stream_writable.js:360:23
+      1  100.0%            LazyCompile: ~Writable.write _stream_writable.js:268:36
+      1    1.0%      LazyCompile: ~Socket net.js:221:16
+      1  100.0%        LazyCompile: ~WriteStream tty.js:70:21
+      1  100.0%          LazyCompile: ~createWritableStdioStream internal/process/stdio.js:164:35
+      1  100.0%            LazyCompile: ~getStdout internal/process/stdio.js:18:21
+      1    1.0%      LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%        LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.0%      LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      1  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    1.0%      LazyCompile: ~Module._initPaths internal/modules/cjs/loader.js:748:29
+      1  100.0%        Script: ~<anonymous> internal/modules/cjs/loader.js:1:11
+      1  100.0%          LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%            LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1    1.0%      LazyCompile: ~E internal/errors.js:190:11
+      1  100.0%        Script: ~<anonymous> internal/errors.js:1:11
+      1  100.0%          LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%            LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1    1.0%      LazyCompile: ~Console.(anonymous function) console.js:175:49
+      1  100.0%        LazyCompile: ~Console.(anonymous function) console.js:186:47
+      1  100.0%          LazyCompile: ~log console.js:196:37
+      1  100.0%            node::inspector::(anonymous namespace)::InspectorConsoleCall(v8::FunctionCallbackInfo<v8::Value> const&)
+     49   20.0%    v8::internal::Runtime_InterpreterDeserializeLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+     10   20.4%      Script: ~<anonymous> :1:1
+      8   16.3%      Script: ~bootstrapInternalLoaders internal/bootstrap/loaders.js:42:35
+      8   16.3%      Script: ~<anonymous> :5:10
+      8  100.0%        Script: ~<anonymous> :1:1
+      4    8.2%      Script: ~<anonymous> net.js:1:11
+      4  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      4  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      4  100.0%            Script: ~<anonymous> tty.js:1:11
+      3    6.1%      Script: ~<anonymous> _stream_readable.js:1:11
+      3  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      3  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      3  100.0%            Script: ~<anonymous> stream.js:1:11
+      3    6.1%      LazyCompile: ~Script vm.js:37:14
+      3  100.0%        LazyCompile: ~createScript vm.js:244:22
+      3  100.0%          LazyCompile: ~runInThisContext vm.js:293:26
+      3  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:650:37
+      3    6.1%      LazyCompile: ~QuickSort native array.js:530:19
+      3  100.0%        LazyCompile: ~InnerArraySort native array.js:486:24
+      3  100.0%          LazyCompile: ~sort native array.js:610:46
+      3  100.0%            Script: ~<anonymous> internal/modules/cjs/helpers.js:1:11
+      2    4.1%      Script: ~<anonymous> internal/errors.js:1:11
+      2  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      2  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2  100.0%            Script: ~<anonymous> internal/async_hooks.js:1:11
+      2    4.1%      Script: ~<anonymous> fs.js:1:11
+      2  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      2  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2  100.0%            Script: ~<anonymous> assert.js:1:11
+      2    4.1%      LazyCompile: ~normalizeString path.js:57:25
+      2  100.0%        LazyCompile: ~resolve path.js:1075:28
+      2  100.0%          LazyCompile: ~Module._initPaths internal/modules/cjs/loader.js:748:29
+      2  100.0%            Script: ~<anonymous> internal/modules/cjs/loader.js:1:11
+      2    4.1%      LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      2  100.0%        LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2  100.0%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      2  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    2.0%      LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%        Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    2.0%      LazyCompile: ~E internal/errors.js:190:11
+      1  100.0%        Script: ~<anonymous> internal/errors.js:1:11
+      1  100.0%          LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%            LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      9    3.7%    v8::internal::Runtime_NewObject(int, v8::internal::Object**, v8::internal::Isolate*)
+      3   33.3%      Script: ~<anonymous> console.js:1:11
+      3  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      3  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      3  100.0%            LazyCompile: ~setupGlobalConsole internal/bootstrap/node.js:382:30
+      3   33.3%      LazyCompile: ~Writable _stream_writable.js:198:18
+      3  100.0%        LazyCompile: ~Duplex _stream_duplex.js:47:16
+      3  100.0%          LazyCompile: ~Socket net.js:221:16
+      3  100.0%            LazyCompile: ~WriteStream tty.js:70:21
+      2   22.2%      LazyCompile: ~createWritableStdioStream internal/process/stdio.js:164:35
+      2  100.0%        LazyCompile: ~getStdout internal/process/stdio.js:18:21
+      2  100.0%          Script: ~<anonymous> console.js:1:11
+      2  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1   11.1%      Script: ~<anonymous> timers.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            LazyCompile: ~setupGlobalTimeouts internal/bootstrap/node.js:372:31
+
+    219   19.4%  node::contextify::ContextifyScript::New(v8::FunctionCallbackInfo<v8::Value> const&)
+    219  100.0%    v8::internal::Builtin_HandleApiCall(int, v8::internal::Object**, v8::internal::Isolate*)
+    219  100.0%      LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+    219  100.0%        LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+     31   14.2%          Script: ~<anonymous> stream.js:1:11
+     31  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+     19    8.7%          Script: ~<anonymous> util.js:1:11
+     19  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+     18    8.2%          Script: ~<anonymous> assert.js:1:11
+     18  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+     18    8.2%          LazyCompile: ~startup internal/bootstrap/node.js:30:19
+     18  100.0%            Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+     16    7.3%          Script: ~<anonymous> internal/fs/streams.js:1:11
+     16  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+     12    5.5%          Script: ~<anonymous> buffer.js:1:11
+     12  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+     10    4.6%          Script: ~<anonymous> internal/encoding.js:1:11
+     10  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+     10    4.6%          LazyCompile: ~setupGlobalConsole internal/bootstrap/node.js:382:30
+     10  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      9    4.1%          Script: ~<anonymous> fs.js:1:11
+      9  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      9    4.1%          LazyCompile: ~setupGlobalVariables internal/bootstrap/node.js:323:32
+      9  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      8    3.7%          Script: ~<anonymous> tty.js:1:11
+      8  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      8    3.7%          Script: ~<anonymous> internal/modules/cjs/loader.js:1:11
+      8  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      7    3.2%          Script: ~<anonymous> _stream_readable.js:1:11
+      7  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      6    2.7%          Script: ~<anonymous> internal/process/main_thread_only.js:1:11
+      6  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      6    2.7%          Script: ~<anonymous> internal/async_hooks.js:1:11
+      6  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      6    2.7%          LazyCompile: ~setupNextTick internal/process/next_tick.js:5:23
+      6  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      6    2.7%          LazyCompile: ~setupGlobalTimeouts internal/bootstrap/node.js:372:31
+      6  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      5    2.3%          LazyCompile: ~setupProcessFatal internal/bootstrap/node.js:455:29
+      5  100.0%            LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      4    1.8%          Script: ~<anonymous> timers.js:1:11
+      4  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      4    1.8%          LazyCompile: ~createWritableStdioStream internal/process/stdio.js:164:35
+      4  100.0%            LazyCompile: ~getStdout internal/process/stdio.js:18:21
+      3    1.4%          Script: ~<anonymous> net.js:1:11
+      3  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+
+     24    2.1%  __mprotect
+     17   70.8%    v8::internal::Runtime_InterpreterDeserializeLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+      5   29.4%      Script: ~bootstrapInternalLoaders internal/bootstrap/loaders.js:42:35
+      3   17.6%      Script: ~<anonymous> internal/errors.js:1:11
+      3  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      3  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      3  100.0%            Script: ~<anonymous> internal/async_hooks.js:1:11
+      3   17.6%      Script: ~<anonymous> :5:10
+      3  100.0%        Script: ~<anonymous> :1:1
+      2   11.8%      LazyCompile: ~QuickSort native array.js:530:19
+      2  100.0%        LazyCompile: ~InnerArraySort native array.js:486:24
+      2  100.0%          LazyCompile: ~sort native array.js:610:46
+      2  100.0%            Script: ~<anonymous> internal/modules/cjs/helpers.js:1:11
+      1    5.9%      LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%        Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    5.9%      LazyCompile: ~Script vm.js:37:14
+      1  100.0%        LazyCompile: ~createScript vm.js:244:22
+      1  100.0%          LazyCompile: ~runInThisContext vm.js:293:26
+      1  100.0%            LazyCompile: ~Module._compile internal/modules/cjs/loader.js:650:37
+      1    5.9%      LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%        LazyCompile: ~startup internal/bootstrap/node.js:30:19
+      1  100.0%          Script: ~bootstrapNodeJSCore internal/bootstrap/node.js:15:30
+      1    5.9%      LazyCompile: ~E internal/errors.js:190:11
+      1  100.0%        Script: ~<anonymous> internal/errors.js:1:11
+      1  100.0%          LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%            LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      4   16.7%    v8::internal::Runtime_DeserializeLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+      2   50.0%      Script: ~<anonymous> internal/encoding.js:1:11
+      2  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      2  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      2  100.0%            Script: ~<anonymous> util.js:1:11
+      1   25.0%      Script: ~<anonymous> _stream_duplex.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            Script: ~<anonymous> stream.js:1:11
+      1   25.0%      LazyCompile: ~args internal/util/types.js:11:10
+      1  100.0%        LazyCompile: ~isUint8Array internal/util/types.js:28:22
+      1  100.0%          LazyCompile: ~nullCheck internal/fs/utils.js:73:19
+      1  100.0%            LazyCompile: ~validatePath internal/fs/utils.js:326:22
+      2    8.3%    v8::internal::Runtime_KeyedStoreIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      2  100.0%      LazyCompile: ~createUnsafeArrayBuffer buffer.js:116:33
+      2  100.0%        LazyCompile: ~createPool buffer.js:125:20
+      2  100.0%          Script: ~<anonymous> buffer.js:1:11
+      2  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1    4.2%    v8::internal::Runtime_RegExpExec(int, v8::internal::Object**, v8::internal::Isolate*)
+      1  100.0%      Builtin: RegExpPrototypeTest
+      1  100.0%        LazyCompile: ~debuglog util.js:271:18
+      1  100.0%          Script: ~<anonymous> _stream_readable.js:1:11
+      1  100.0%            LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+
+     14    1.2%  __lll_unlock_wake
+      3   21.4%    v8::internal::Runtime_InterpreterDeserializeLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+      1   33.3%      Script: ~<anonymous> :5:10
+      1  100.0%        Script: ~<anonymous> :1:1
+      1   33.3%      LazyCompile: ~getColorDepth internal/tty.js:70:23
+      1  100.0%        LazyCompile: ~Console.(anonymous function) console.js:175:49
+      1  100.0%          LazyCompile: ~Console.(anonymous function) console.js:186:47
+      1  100.0%            LazyCompile: ~log console.js:196:37
+      1   33.3%      LazyCompile: ~QuickSort native array.js:530:19
+      1  100.0%        LazyCompile: ~InnerArraySort native array.js:486:24
+      1  100.0%          LazyCompile: ~sort native array.js:610:46
+      1  100.0%            Script: ~<anonymous> internal/modules/cjs/helpers.js:1:11
+      3   21.4%    v8::internal::Runtime_CompileLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+      1   33.3%      LazyCompile: ~doWrite _stream_writable.js:400:17
+      1  100.0%        LazyCompile: ~writeOrBuffer _stream_writable.js:360:23
+      1  100.0%          LazyCompile: ~Writable.write _stream_writable.js:268:36
+      1  100.0%            LazyCompile: ~write console.js:143:15
+      1   33.3%      LazyCompile: ~TickObject internal/process/next_tick.js:74:16
+      1  100.0%        LazyCompile: ~nextTick internal/process/next_tick.js:96:20
+      1  100.0%          LazyCompile: ~onwrite _stream_writable.js:445:17
+      1  100.0%            LazyCompile: ~afterWriteDispatched internal/stream_base_commons.js:73:30
+      1   33.3%      LazyCompile: ~Module.load internal/modules/cjs/loader.js:590:33
+      1  100.0%        LazyCompile: ~tryModuleLoad internal/modules/cjs/loader.js:535:23
+      1  100.0%          LazyCompile: ~Module._load internal/modules/cjs/loader.js:502:24
+      1  100.0%            LazyCompile: ~Module.runMain internal/modules/cjs/loader.js:729:26
+      1    7.1%    v8::internal::Runtime_NewObject(int, v8::internal::Object**, v8::internal::Isolate*)
+      1  100.0%      Script: ~<anonymous> timers.js:1:11
+      1  100.0%        LazyCompile: ~NativeModule.compile internal/bootstrap/loaders.js:234:44
+      1  100.0%          LazyCompile: ~NativeModule.require internal/bootstrap/loaders.js:138:34
+      1  100.0%            LazyCompile: ~setupGlobalTimeouts internal/bootstrap/node.js:372:31
+
